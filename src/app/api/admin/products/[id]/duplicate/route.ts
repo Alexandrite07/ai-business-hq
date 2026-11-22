@@ -18,7 +18,7 @@ function draftSlug(title: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .slice(0, 80);
-  return `${base || "sunday-rituals-product"}-${randomUUID().slice(0, 8)}`;
+  return `${base || "roam-and-nest-product"}-${randomUUID().slice(0, 8)}`;
 }
 
 export async function POST(request: Request, context: RouteContext) {
@@ -65,8 +65,8 @@ export async function POST(request: Request, context: RouteContext) {
   delete fields.updated_at;
   const payload = {
     ...fields,
-    slug: draftSlug(String(source.title ?? "Sunday Rituals Product")),
-    title: `${String(source.title ?? "Sunday Rituals Product")} (Copy)`.slice(0, 120),
+    slug: draftSlug(String(source.title ?? "Roam & Nest Product")),
+    title: `${String(source.title ?? "Roam & Nest Product")} (Copy)`.slice(0, 120),
     active: false,
     ...(migrationRequired ? {} : { updated_at: new Date().toISOString() }),
   };

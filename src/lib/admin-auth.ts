@@ -3,7 +3,7 @@ import "server-only";
 import { cookies } from "next/headers";
 import { createHmac, createHash, timingSafeEqual } from "node:crypto";
 
-export const ADMIN_SESSION_COOKIE = "sunday_rituals_admin";
+export const ADMIN_SESSION_COOKIE = "roam_and_nest_admin";
 const SESSION_LIFETIME_SECONDS = 60 * 60 * 12;
 
 function constantTimeEqual(left: string, right: string): boolean {
@@ -27,7 +27,7 @@ function secureEqual(left: string, right: string): boolean {
 
 function sessionSignature(expiresAt: string, password: string): string {
   return createHmac("sha256", password)
-    .update(`sunday-rituals-admin:${expiresAt}`)
+    .update(`roam-and-nest-admin:${expiresAt}`)
     .digest("hex");
 }
 

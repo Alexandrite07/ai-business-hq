@@ -116,7 +116,7 @@ export async function POST(request: Request) {
         payment_source: {
           paypal: {
             experience_context: {
-              brand_name: "Sunday Rituals",
+              brand_name: "Roam & Nest",
               locale: "en-US",
               landing_page: "GUEST_CHECKOUT",
               shipping_preference: "GET_FROM_FILE",

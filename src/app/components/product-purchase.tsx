@@ -86,7 +86,7 @@ export function ProductPurchase({ product }: { product: CheckoutProduct }) {
       <Link className="back-link" href="/#shop">
         <ArrowLeft aria-hidden="true" size={14} /> Back to the collection
       </Link>
-      <span className="eyebrow">THE SUNDAY FAVORITE</span>
+      <span className="eyebrow">A ROAM &amp; NEST FAVORITE</span>
       <div aria-label="Rated 4.9 out of 5" className="detail-rating">
         <span>★★★★★</span> 4.9 · loved by our community
       </div>

@@ -39,10 +39,10 @@ async function Confirmation({ searchParams }: ConfirmationProps) {
       </div>
       <p className="confirmation-support">
         <Mail aria-hidden="true" size={15} />
-        Questions? <a href="mailto:support@sundayrituals.com">support@sundayrituals.com</a>
+        Questions? <a href="mailto:support@roamandnest.com">support@roamandnest.com</a>
       </p>
       <Link className="button button-dark" href="/">
-        Back to Sunday Rituals
+        Back to Roam & Nest
       </Link>
     </section>
   );

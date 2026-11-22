@@ -1,0 +1,14 @@
+{
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Roam & Nest Storefront",
+      "visibility": "public",
+      "onAutoForward": "notify"
+    }
+  },
+  "postStartCommand": "nohup node scripts/dev-supervisor.js > /tmp/next-dev.log 2>&1 &",
+  "postAttachCommand": "nohup node scripts/dev-supervisor.js > /tmp/next-dev.log 2>&1 &"
+}

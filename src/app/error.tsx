@@ -18,7 +18,7 @@ export default function GlobalError({
         We hit a snag on your last request.
       </h1>
       <p style={{ maxWidth: "38rem", margin: "1rem auto 0", color: "#475467" }}>
-        {error.message || "Please try again in a moment."}
+        {error.message || "Please try again in a moment. For help, contact support@roamandnest.com."}
       </p>
       <div style={{ display: "flex", gap: "1rem", justifyContent: "center", marginTop: "1.5rem" }}>
         <button

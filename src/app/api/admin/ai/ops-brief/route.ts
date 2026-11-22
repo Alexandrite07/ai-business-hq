@@ -147,7 +147,7 @@ export async function GET(request: Request) {
 
   try {
     const result = await generateGeminiJson<BriefResult>(
-      `Create exactly 3 concise executive action bullets for the Sunday Rituals store team today. Base every recommendation on these metrics and prioritize urgent fulfillment or improving profitability. Do not invent trends, customers, or facts. Metrics are USD and include all recorded orders.
+      `Create exactly 3 concise executive action bullets for the Roam & Nest store team today. Base recommendations only on these metrics and prioritize urgent fulfillment, catalog readiness for pet enrichment/travel/home gear, and profitability. Do not invent trends, customers, or facts. Keep every recommendation PayPal-compliant: target at least 55% net margin after supplier cost, the $3.50 US shipping buffer when used, and 4.4% + $0.30 PayPal fees. Metrics are USD and include all recorded orders.
 
 ${JSON.stringify(metrics)}`,
       {

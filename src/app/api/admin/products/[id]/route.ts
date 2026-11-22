@@ -77,7 +77,7 @@ function withLegacyDefaults(product: Record<string, unknown>) {
   return {
     ...product,
     subtitle: null,
-    category: "Beauty Rituals",
+    category: "Dog Enrichment",
     badge_text: null,
     compare_at_price_usd: null,
     variants: [],

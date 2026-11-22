@@ -24,7 +24,7 @@ export default function NotFoundPage() {
           textDecoration: "none",
         }}
       >
-        Return to Sunday Rituals
+        Return to Roam & Nest
       </Link>
     </section>
   );

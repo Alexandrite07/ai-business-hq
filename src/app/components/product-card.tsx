@@ -68,7 +68,7 @@ export function ProductCard({ product }: { product: Product }) {
             <span>4.9 · loved by our community</span>
           </div>
           <h3>{product.title}</h3>
-          <p>{product.subtitle ?? "A thoughtfully chosen beauty ritual."}</p>
+          <p>{product.subtitle ?? "Thoughtful gear for everyday comfort and easy adventures."}</p>
         </div>
         <div className="product-card-price">
           <strong>{currency.format(price)}</strong>

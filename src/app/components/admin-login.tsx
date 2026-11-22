@@ -34,7 +34,7 @@ export function AdminLogin() {
         <span className="admin-login-icon">
           <Sparkles aria-hidden="true" size={19} />
         </span>
-        <span className="eyebrow">SUNDAY RITUALS / TEAM</span>
+        <span className="eyebrow">ROAM &amp; NEST / TEAM</span>
         <h1>A little behind the scenes.</h1>
         <p>Sign in to manage orders, shipping updates, and your product collection.</p>
         <form className="admin-login-form" onSubmit={handleSubmit}>

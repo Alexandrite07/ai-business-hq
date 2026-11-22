@@ -8,7 +8,7 @@ export default function RefundPolicyPage() {
   return (
     <article className="policy-page">
       <Link className="back-link" href="/">
-        <ArrowLeft aria-hidden="true" size={14} /> Back to Sunday Rituals
+        <ArrowLeft aria-hidden="true" size={14} /> Back to Roam & Nest
       </Link>
       <span className="policy-icon">
         <HeartHandshake aria-hidden="true" size={20} />
@@ -17,13 +17,13 @@ export default function RefundPolicyPage() {
       <h1>30-day refund policy</h1>
       <p className="policy-updated">Last updated: November 15, 2026</p>
       <p>
-        We want your Sunday Rituals order to feel right for you. If it doesn’t, contact us
+        We want your Roam & Nest order to feel right for you. If it doesn’t, contact us
         within 30 days of delivery and we’ll help with the return and refund process.
       </p>
       <h2>How to request help</h2>
       <p>
         Email{" "}
-        <a href="mailto:support@sundayrituals.com">support@sundayrituals.com</a> with
+        <a href="mailto:support@roamandnest.com">support@roamandnest.com</a> with
         your order reference and a short description of the issue. We’ll reply with the
         next steps and any return instructions. Please contact us before sending anything
         back.
@@ -43,7 +43,7 @@ export default function RefundPolicyPage() {
       </p>
       <div className="policy-callout">
         We’re here to help:{" "}
-        <a href="mailto:support@sundayrituals.com">support@sundayrituals.com</a>.
+        <a href="mailto:support@roamandnest.com">support@roamandnest.com</a>.
       </div>
     </article>
   );

@@ -682,7 +682,7 @@ export async function extractProductFromUrl(
       const readerResponse = await fetchPublicText(
         new URL(`https://r.jina.ai/${sourceUrl.toString()}`),
         JINA_TIMEOUT_MS,
-        { Accept: "text/plain", "User-Agent": "SundayRitualsProductImporter/1.0" },
+        { Accept: "text/plain", "User-Agent": "RoamAndNestProductImporter/1.0" },
         MAX_HTML_BYTES,
       );
       if (readerResponse.status < 400) {

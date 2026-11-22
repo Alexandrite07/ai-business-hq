@@ -77,12 +77,12 @@ type StudioMode = "catalog" | "link" | "batch" | "concept" | "editor";
 type CatalogFilter = "all" | "live" | "drafts" | "featured" | "low-stock";
 
 const CATEGORIES = [
-  "Hair Rituals",
-  "Skin & Glow",
-  "Sleep & Silk",
-  "Eye & Brow",
-  "Travel & Vanity",
-  "Gift Bundles",
+  "All Gear",
+  "Dog Enrichment",
+  "Walk & Travel",
+  "Cozy Cat",
+  "Home & Sanctuary",
+  "Holiday Gift Sets",
 ];
 const BADGES = ["Bestseller", "New Arrival", "Limited Batch", "TikTok Viral"];
 const DEFAULT_SHIPPING = "2–3 business days processing + 5–10 business days US delivery";
@@ -93,7 +93,7 @@ function blankDraft(): EditorDraft {
     title: "",
     subtitle: "",
     slug: "",
-    category: "Hair Rituals",
+    category: "Dog Enrichment",
     optionLabel: "Color",
     badgeText: "",
     stockStatus: "in_stock",
@@ -126,7 +126,7 @@ function toDraft(product: Partial<StudioProduct> & Record<string, unknown>): Edi
     title: typeof product.title === "string" ? product.title : "",
     subtitle: typeof product.subtitle === "string" ? product.subtitle : "",
     slug: typeof product.slug === "string" ? product.slug : "",
-    category: typeof product.category === "string" ? product.category : "Hair Rituals",
+    category: typeof product.category === "string" ? product.category : "Dog Enrichment",
     optionLabel: variants[0]?.optionLabel ?? "Color",
     badgeText: typeof product.badge_text === "string" ? product.badge_text : "",
     stockStatus: typeof product.stock_status === "string" ? product.stock_status : "in_stock",
@@ -393,7 +393,7 @@ export function RetailProductStudio({ initialMode = "catalog" }: { initialMode?:
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             rawTitle: concept,
-            rawSpecs: "Sunday Rituals beauty-accessory concept. Create a tasteful product idea with no unsupported health claims.",
+            rawSpecs: "Roam & Nest pet, travel, or home gear concept. Create warm, practical copy with no unsupported health, veterinary, or disease claims.",
             supplierCostUsd: Number(conceptCost),
             imageUrls: images,
             cjSku: "",
@@ -649,7 +649,7 @@ export function RetailProductStudio({ initialMode = "catalog" }: { initialMode?:
     <section className="retail-product-studio">
       <div className="studio-heading">
         <div>
-          <span className="eyebrow"><Sparkles aria-hidden="true" size={13} /> SUNDAY RITUALS</span>
+          <span className="eyebrow"><Sparkles aria-hidden="true" size={13} /> ROAM &amp; NEST</span>
           <h2>Retail Product Studio</h2>
           <p>Build, price, photograph, and publish every product variety from one place.</p>
         </div>
@@ -788,7 +788,7 @@ export function RetailProductStudio({ initialMode = "catalog" }: { initialMode?:
             <div className="studio-bundle-list"><strong>Bundle tiers</strong>{draft.bundleTiers.map((tier, index) => <div className="studio-bundle-row" key={`${tier.qty}-${index}`}><input aria-label="Bundle quantity" min="2" onChange={(event) => updateDraft("bundleTiers", draft.bundleTiers.map((entry, tierIndex) => tierIndex === index ? { ...entry, qty: Number(event.target.value) } : entry))} type="number" value={tier.qty} /><input aria-label="Bundle label" onChange={(event) => updateDraft("bundleTiers", draft.bundleTiers.map((entry, tierIndex) => tierIndex === index ? { ...entry, label: event.target.value } : entry))} value={tier.label} /><input aria-label="Bundle discount percent" max="90" min="0" onChange={(event) => updateDraft("bundleTiers", draft.bundleTiers.map((entry, tierIndex) => tierIndex === index ? { ...entry, discountPercent: Number(event.target.value) } : entry))} type="number" value={tier.discountPercent} /><button aria-label="Remove bundle tier" className="icon-button danger" onClick={() => updateDraft("bundleTiers", draft.bundleTiers.filter((_, tierIndex) => tierIndex !== index))} type="button"><Trash2 size={14} /></button></div>)}<button className="button button-outline" onClick={() => updateDraft("bundleTiers", [...draft.bundleTiers, { qty: 2, label: "Ritual duo", discountPercent: 5 }])} style={{ minHeight: 44 }} type="button"><Plus size={14} /> Add bundle tier</button></div>
             <label className="admin-field"><span>SEO title</span><input maxLength={180} onChange={(event) => updateDraft("seoTitle", event.target.value)} value={draft.seoTitle} /></label>
             <label className="admin-field"><span>SEO description</span><textarea maxLength={500} onChange={(event) => updateDraft("seoDescription", event.target.value)} rows={2} value={draft.seoDescription} /></label>
-            <div className="seo-preview"><small>SEARCH PREVIEW</small><strong>{draft.seoTitle || draft.title || "Product title"} | Sunday Rituals</strong><span>{draft.seoDescription || draft.description || "Product description preview"}</span></div>
+            <div className="seo-preview"><small>SEARCH PREVIEW</small><strong>{draft.seoTitle || draft.title || "Product title"} | Roam &amp; Nest</strong><span>{draft.seoDescription || draft.description || "Product description preview"}</span></div>
           </section>
           <div className="studio-actions"><button className="button button-outline" onClick={() => setMode("catalog")} style={{ minHeight: 44 }} type="button">Cancel</button><button className="button button-dark" disabled={busy} style={{ minHeight: 44 }} type="submit">{busy ? "Saving…" : draft.id ? "Save Live Changes" : "Save Product Draft"}</button></div>
         </form>

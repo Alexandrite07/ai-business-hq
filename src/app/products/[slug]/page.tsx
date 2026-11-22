@@ -14,7 +14,7 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const siteOrigin =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://sundayrituals.com";
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://roamandnest.com";
   const offers = product.variants.length > 0
     ? product.variants.map((variant) => ({
         "@type": "Offer",

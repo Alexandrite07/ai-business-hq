@@ -6,16 +6,32 @@ import type { Product } from "@/lib/products";
 
 type SortMode = "featured" | "newest" | "price";
 
+const PRIMARY_CATEGORIES = [
+  "All Gear",
+  "Dog Enrichment",
+  "Walk & Travel",
+  "Cozy Cat",
+  "Home & Sanctuary",
+  "Holiday Gift Sets",
+];
+
 export function ProductCollection({ products }: { products: Product[] }) {
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState("All Gear");
   const [sortMode, setSortMode] = useState<SortMode>("featured");
   const categories = useMemo(
-    () => ["All", ...new Set(products.map((product) => product.category).filter(Boolean))],
+    () => [
+      ...PRIMARY_CATEGORIES,
+      ...new Set(
+        products
+          .map((product) => product.category)
+          .filter((item) => item && !PRIMARY_CATEGORIES.includes(item)),
+      ),
+    ],
     [products],
   );
   const visibleProducts = useMemo(() => {
     const filtered = products.filter(
-      (product) => category === "All" || product.category === category,
+      (product) => category === "All Gear" || product.category === category,
     );
     return filtered.sort((left, right) => {
       if (sortMode === "price") {

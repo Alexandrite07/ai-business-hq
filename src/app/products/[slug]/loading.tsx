@@ -4,7 +4,7 @@ export default function ProductLoading() {
       <div className="product-detail-layout">
         <div className="product-gallery gallery-loading" />
         <div className="product-purchase">
-          <span className="eyebrow">SUNDAY RITUALS</span>
+          <span className="eyebrow">ROAM &amp; NEST</span>
           <div className="loading-line loading-line-long" />
           <div className="loading-line" />
           <div className="loading-line loading-line-short" />

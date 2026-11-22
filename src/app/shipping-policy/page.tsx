@@ -8,7 +8,7 @@ export default function ShippingPolicyPage() {
   return (
     <article className="policy-page">
       <Link className="back-link" href="/">
-        <ArrowLeft aria-hidden="true" size={14} /> Back to Sunday Rituals
+        <ArrowLeft aria-hidden="true" size={14} /> Back to Roam & Nest
       </Link>
       <span className="policy-icon">
         <Truck aria-hidden="true" size={20} />
@@ -31,7 +31,7 @@ export default function ShippingPolicyPage() {
         When available, tracking information is sent to the email address provided at
         checkout once your order ships. Please check that your shipping address is
         complete and accurate before placing your order. Contact{" "}
-        <a href="mailto:support@sundayrituals.com">support@sundayrituals.com</a> if you
+        <a href="mailto:support@roamandnest.com">support@roamandnest.com</a> if you
         have a question about a shipment.
       </p>
       <h2>Shipping address</h2>
@@ -41,7 +41,7 @@ export default function ShippingPolicyPage() {
       </p>
       <div className="policy-callout">
         Need a hand? Email{" "}
-        <a href="mailto:support@sundayrituals.com">support@sundayrituals.com</a>.
+        <a href="mailto:support@roamandnest.com">support@roamandnest.com</a>.
       </div>
     </article>
   );

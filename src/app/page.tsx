@@ -16,30 +16,33 @@ import { getActiveProducts } from "@/lib/products";
 async function Storefront() {
   await connection();
   const products = await getActiveProducts();
-  const featuredProduct = products[0];
+  const featuredProduct =
+    products.find((product) => product.featured && product.active) ?? products[0];
+  const featuredSlug =
+    featuredProduct?.slug ?? "calmpaws-silicone-slow-feeder-lick-mat-set";
 
   return (
     <>
       <section className="hero-section">
         <div className="hero-copy">
           <span className="eyebrow">
-            <Sparkles aria-hidden="true" size={14} /> A softer kind of self-care
+            <Sparkles aria-hidden="true" size={14} /> Thoughtful comfort, wherever life goes
           </span>
           <h1>
-            Make a little
+            Home and away,
             <br />
-            <em>room for you.</em>
+            <em>thoughtfully equipped.</em>
           </h1>
           <p>
-            Thoughtful beauty essentials for slower evenings, softer mornings, and the
-            everyday moments that feel like yours.
+            Thoughtful gear for life at home and on the move — from enrichment and
+            mealtime calm to cozy spaces and easier travel.
           </p>
           <div className="hero-actions">
-            <Link className="button button-dark" href={`/products/${featuredProduct.slug}`}>
-              Meet your new ritual <ArrowRight aria-hidden="true" size={16} />
+            <Link className="button button-dark" href={`/products/${featuredSlug}`}>
+              Shop thoughtful gear <ArrowRight aria-hidden="true" size={16} />
             </Link>
             <Link className="text-link" href="#our-promise">
-              Why Sunday Rituals <ArrowDown aria-hidden="true" size={14} />
+              Why Roam & Nest <ArrowDown aria-hidden="true" size={14} />
             </Link>
           </div>
           <div className="hero-proof">
@@ -49,13 +52,13 @@ async function Storefront() {
               <i>A</i>
             </span>
             <span>
-              <strong>4.9/5</strong> from people finding their softer side
+              <strong>Thoughtfully chosen</strong> for daily comfort
             </span>
           </div>
         </div>
         <div className="hero-art">
           <div
-            aria-label="A calm, sunlit beauty ritual"
+            aria-label="A calm pet and home lifestyle"
             className="hero-image"
             role="img"
             style={{
@@ -69,8 +72,8 @@ async function Storefront() {
               <Heart aria-hidden="true" fill="currentColor" size={15} />
             </span>
             <span>
-              <strong>Your little moment</strong>
-              starts right here
+              <strong>Little comforts</strong>
+              for big everyday moments
             </span>
           </div>
           <span aria-hidden="true" className="hero-orbit">
@@ -78,7 +81,7 @@ async function Storefront() {
           </span>
         </div>
         <div aria-hidden="true" className="hero-scroll">
-          <span /> Scroll to find your ritual
+          <span /> Scroll to find your gear
         </div>
       </section>
 
@@ -112,8 +115,8 @@ async function Storefront() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">A GOOD PLACE TO BEGIN</span>
-            <h2>Little things, <em>lovingly chosen.</em></h2>
-            <p>Meet the feel-good essential our community can’t stop talking about.</p>
+            <h2>Useful things, <em>lovingly chosen.</em></h2>
+            <p>Meet practical comfort and enrichment for pets, home, and time away.</p>
           </div>
           <span className="collection-count">{String(products.length).padStart(2, "0")} / YOUR NEXT FAVORITE</span>
         </div>
@@ -122,7 +125,7 @@ async function Storefront() {
 
       <section className="ritual-feature">
         <div
-          aria-label="Gentle evening beauty routine"
+          aria-label="Cozy home and pet enrichment"
           className="ritual-image"
           role="img"
           style={{
@@ -131,15 +134,15 @@ async function Storefront() {
           }}
         />
         <div className="ritual-copy">
-          <span className="eyebrow">THE SUNDAY STATE OF MIND</span>
-          <h2>Beauty should feel like a deep breath.</h2>
+          <span className="eyebrow">THE ROAM & NEST STATE OF MIND</span>
+          <h2>Everyday life should feel a little easier.</h2>
           <p>
-            No complicated routines. No pressure to be perfect. Just thoughtfully chosen
-            essentials that make taking care of yourself feel easy, gentle, and entirely
-            your own.
+            No clutter for clutter’s sake. No complicated gear. Just useful, attractive
+            essentials that support daily comfort, calmer routines, and mess-conscious
+            moments at home or away.
           </p>
-          <Link className="text-link" href={`/products/${featuredProduct.slug}`}>
-            Find your first little ritual <ArrowRight aria-hidden="true" size={15} />
+          <Link className="text-link" href={`/products/${featuredSlug}`}>
+            Find an everyday favorite <ArrowRight aria-hidden="true" size={15} />
           </Link>
           <span aria-hidden="true" className="ritual-sparkle">
             <Sparkles size={32} strokeWidth={1} />
@@ -150,10 +153,10 @@ async function Storefront() {
       <section className="promise-section section-wrap">
         <div className="promise-intro">
           <span className="eyebrow">A NOTE FROM US</span>
-          <h2>Consider this your permission to <em>slow down.</em></h2>
+          <h2>Consider this a little more <em>ease.</em></h2>
           <p>
-            Your routine doesn’t need to be another thing to get right. We’re here for
-            small joys, thoughtful details, and beauty that fits real life.
+            Daily routines don’t need to be another thing to get right. We’re here for
+            useful details, warm design, and gear that fits real life.
           </p>
         </div>
         <div className="promise-cards">
@@ -161,13 +164,13 @@ async function Storefront() {
             <span className="promise-number">01</span>
             <Sparkles aria-hidden="true" size={20} />
             <h3>Thoughtfully picked</h3>
-            <p>Useful little favorites, chosen to make everyday care feel special.</p>
+            <p>Useful favorites for pets, home, and travel, chosen with real routines in mind.</p>
           </article>
           <article>
             <span className="promise-number">02</span>
             <Heart aria-hidden="true" size={20} />
-            <h3>Gentle by design</h3>
-            <p>Comfort-first details that make a calmer routine easy to come back to.</p>
+            <h3>Comfort in the details</h3>
+            <p>Attractive, practical features that make daily routines feel calmer and simpler.</p>
           </article>
           <article>
             <span className="promise-number">03</span>
@@ -183,7 +186,7 @@ async function Storefront() {
           <span className="eyebrow">GOOD TO KNOW</span>
           <h2>A few things you might be <em>wondering.</em></h2>
           <p>Need a hand with something else? We’re only an email away.</p>
-          <a className="text-link" href="mailto:support@sundayrituals.com">
+          <a className="text-link" href="mailto:support@roamandnest.com">
             Email our team <ArrowRight aria-hidden="true" size={15} />
           </a>
         </div>
@@ -221,9 +224,9 @@ async function Storefront() {
 
       <section className="closing-banner">
         <span className="eyebrow">A LITTLE SOMETHING FOR YOU</span>
-        <h2>Your softer morning is one good night away.</h2>
-        <Link className="button button-light" href={`/products/${featuredProduct.slug}`}>
-          Make room for a new ritual <ArrowRight aria-hidden="true" size={16} />
+        <h2>Thoughtful gear for wherever today takes you.</h2>
+        <Link className="button button-light" href={`/products/${featuredSlug}`}>
+          Find your everyday favorite <ArrowRight aria-hidden="true" size={16} />
         </Link>
         <span aria-hidden="true" className="closing-sparkle closing-sparkle-one">
           <Sparkles size={25} />
@@ -238,9 +241,9 @@ async function Storefront() {
 
 function StorefrontFallback() {
   return (
-    <div aria-label="Loading Sunday Rituals" className="storefront-loading">
+    <div aria-label="Loading Roam & Nest" className="storefront-loading">
       <Sparkles aria-hidden="true" size={22} />
-      <span>Making room for your next ritual…</span>
+      <span>Gathering thoughtful gear…</span>
     </div>
   );
 }

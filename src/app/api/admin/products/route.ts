@@ -53,7 +53,7 @@ function withLegacyDefaults(product: Record<string, unknown>) {
   return {
     ...product,
     subtitle: null,
-    category: "Beauty Rituals",
+    category: "Dog Enrichment",
     badge_text: null,
     compare_at_price_usd: null,
     variants: [],
@@ -247,9 +247,9 @@ export async function POST(request: Request) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
-  const slug = `${baseSlug || "sunday-rituals-product"}-${randomUUID().slice(0, 8)}`;
+  const slug = `${baseSlug || "roam-and-nest-product"}-${randomUUID().slice(0, 8)}`;
   const legacyPayload = {
-    store_brand: "Sunday Rituals",
+    store_brand: "Roam & Nest",
     cj_sku: cjSku.trim() || null,
     title: title.trim(),
     slug,
@@ -264,7 +264,7 @@ export async function POST(request: Request) {
   const extendedPayload = {
     ...legacyPayload,
     subtitle: typeof subtitle === "string" ? subtitle.trim() : null,
-    category: typeof category === "string" ? category.trim() : "Beauty Rituals",
+    category: typeof category === "string" ? category.trim() : "Dog Enrichment",
     badge_text: typeof badgeText === "string" ? badgeText.trim() : null,
     compare_at_price_usd:
       typeof compareAtPriceUsd === "number" ? compareAtPriceUsd.toFixed(2) : null,

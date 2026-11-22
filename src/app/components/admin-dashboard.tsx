@@ -183,7 +183,7 @@ export function AdminDashboard() {
       <div className="admin-dashboard-top">
         <div>
           <span className="eyebrow">
-            <Sparkles aria-hidden="true" size={13} /> SUNDAY RITUALS / TEAM
+            <Sparkles aria-hidden="true" size={13} /> ROAM &amp; NEST / TEAM
           </span>
           <h1>Your shop, <em>in good hands.</em></h1>
           <p>Keep the thoughtful details moving, from first click to front door.</p>
@@ -207,7 +207,7 @@ export function AdminDashboard() {
         </div>
         <div>
           <span className="admin-summary-icon"><Store size={18} /></span>
-          <span><small>Active workspace</small><strong>Sunday Rituals</strong></span>
+          <span><small>Active workspace</small><strong>Roam &amp; Nest</strong></span>
         </div>
       </div>
       <div className="admin-workspace">
@@ -298,7 +298,7 @@ export function AdminDashboard() {
       </div>
       <p className="admin-bottom-note">
         Orders and customer details are visible only to authorized store admins.
-        <a href="mailto:support@sundayrituals.com"> Need a hand?</a>
+        <a href="mailto:support@roamandnest.com"> Need a hand?</a>
       </p>
     </section>
   );
@@ -362,7 +362,7 @@ function AdminOrderCard({
                 />
               )}
               <span>
-                {item.title ?? "Sunday Rituals product"}
+                {item.title ?? "Roam & Nest product"}
                 {item.variant_name ? ` · ${item.variant_name}` : ""}
                 {item.variant_sku ? ` · CJ SKU ${item.variant_sku}` : ""}
                 {` · Qty ${item.quantity ?? 1}`}
